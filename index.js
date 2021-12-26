@@ -16,6 +16,4 @@ app.use(express.urlencoded({ extend: true }));
 app.use("/students", studentController);
 
 //app.listen(process.env.PORT || port, "localhost", () =>
-console.log(
-  app.listen(process.env.PORT, (data) => console.log(data)).listening
-);
+app.listen(port, () => console.log("server is on"));
