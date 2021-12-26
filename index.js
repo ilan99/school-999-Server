@@ -15,6 +15,5 @@ app.use(express.urlencoded({ extend: true }));
 
 app.use("/students", studentController);
 
-app.listen(process.env.PORT || port, "localhost", () =>
-  console.log(`server is listening on port ${port}`)
-);
+//app.listen(process.env.PORT || port, "localhost", () =>
+app.listen(() => console.log(`server is listening on port ${port}`));
