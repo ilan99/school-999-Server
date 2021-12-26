@@ -5,6 +5,7 @@ const studentController = require("./controllers/studentController");
 
 const app = express();
 const port = 8000;
+const host = "0.0.0.0";
 
 connectDB();
 
@@ -15,5 +16,4 @@ app.use(express.urlencoded({ extend: true }));
 
 app.use("/students", studentController);
 
-//app.listen(process.env.PORT || port, "localhost", () =>
-app.listen(port, () => console.log("server is on"));
+app.listen(process.env.PORT || port, host, () => console.log("server is on"));
