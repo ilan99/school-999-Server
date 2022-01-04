@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 
 const connectDB = () => {
-  //const URI = "mongodb://localhost:27017/schoolDB";
   const URI =
     "mongodb+srv://ilan99:work1000@cluster0.jgxgj.mongodb.net/schoolDB?retryWrites=true&w=majority";
   const options = {

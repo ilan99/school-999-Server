@@ -16,4 +16,6 @@ app.use(express.urlencoded({ extend: true }));
 
 app.use("/students", studentController);
 
-app.listen(process.env.PORT || port, host, () => console.log("server is on"));
+app.listen(process.env.PORT || port, host, () =>
+  console.log("Heroku server is on")
+);
