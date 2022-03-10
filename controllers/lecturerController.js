@@ -1,27 +1,26 @@
 const express = require("express");
-const { Error } = require("mongoose");
-const studentServices = require("../services/studentServices");
+const lecturerServices = require("../services/lecturerServices");
 
 const router = express.Router();
 
-// Get all students
+// Get all lecturers
 router.route("/").get(async (req, res) => {
-  const students = await studentServices.getAllStudents();
-  return res.json(students);
+  const lecturers = await lecturerServices.getAllLecturers();
+  return res.json(lecturers);
 });
 
-// Get student by Id
+// Get lecturer by Id
 router.route("/:id").get(async (req, res) => {
   const id = req.params.id;
-  const student = await studentServices.getStudentById(id);
-  return res.json(student);
+  const lecturer = await lecturerServices.getLecturerById(id);
+  return res.json(lecturer);
 });
 
 // Post
 router.route("/").post(async (req, res) => {
-  const newStudent = req.body;
+  const newLecturer = req.body;
   try {
-    const data = await studentServices.addStudent(newStudent);
+    const data = await lecturerServices.addLecturer(newLecturer);
     return res.json(data);
   } catch (error) {
     return res.json(error);
@@ -31,9 +30,9 @@ router.route("/").post(async (req, res) => {
 // Put
 router.route("/:id").put(async (req, res) => {
   const id = req.params.id;
-  const changeStudent = req.body;
+  const changeLecturer = req.body;
   try {
-    const data = await studentServices.updateStudent(id, changeStudent);
+    const data = await lecturerServices.updateLecturer(id, changeLecturer);
     return res.json(data);
   } catch (error) {
     return res.json(error);
@@ -43,7 +42,7 @@ router.route("/:id").put(async (req, res) => {
 // Delete
 router.route("/:id").delete(async (req, res) => {
   const id = req.params.id;
-  const data = await studentServices.deleteStudent(id);
+  const data = await lecturerServices.deleteLecturer(id);
   return res.json(data);
 });
 

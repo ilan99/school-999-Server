@@ -42,18 +42,13 @@ const addStudent = (newStudent) => {
 // Put
 const updateStudent = (id, changeStudent) => {
   return new Promise((res, rej) => {
-    Student.findByIdAndUpdate(
-      id,
-      changeStudent,
-      { runValidators: true },
-      (err) => {
-        if (err) {
-          rej(err);
-        } else {
-          res("student updated successfully");
-        }
+    Student.findByIdAndUpdate(id, changeStudent, (err) => {
+      if (err) {
+        rej(err);
+      } else {
+        res("student updated successfully");
       }
-    );
+    });
   });
 };
 
