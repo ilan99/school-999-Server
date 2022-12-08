@@ -6,7 +6,7 @@ const router = express.Router();
 
 // Get all students
 router.route("/").get(async (req, res) => {
-  console.log("New request: ", req);
+  console.log("New request: ", req.headers);
   const students = await studentServices.getAllStudents();
   return res.json(students);
 });
