@@ -7,6 +7,7 @@ const router = express.Router();
 // Initial request
 router.route("/start").get(async (req, res) => {
   console.log("Initial request ...");
+  res.send("ok");
 });
 
 // Get all students
