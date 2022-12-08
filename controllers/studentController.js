@@ -4,6 +4,11 @@ const studentServices = require("../services/studentServices");
 
 const router = express.Router();
 
+// Initial request
+router.route("/start").get(async (req, res) => {
+  console.log("Initial request ...");
+});
+
 // Get all students
 router.route("/").get(async (req, res) => {
   console.log("New request: ", req.headers);
