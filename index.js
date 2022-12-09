@@ -25,5 +25,5 @@ app.use("/settings", settingsController);
 app.use("/messages", messageController);
 
 app.listen(process.env.PORT || port, host, () =>
-  console.log("Render server is on")
+  console.log("School server is on ...")
 );
