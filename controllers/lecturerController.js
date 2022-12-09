@@ -5,6 +5,7 @@ const router = express.Router();
 
 // Get all lecturers
 router.route("/").get(async (req, res) => {
+  console.log("=> Lecturers request");
   const lecturers = await lecturerServices.getAllLecturers();
   return res.json(lecturers);
 });

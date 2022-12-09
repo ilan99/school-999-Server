@@ -5,6 +5,7 @@ const router = express.Router();
 
 // Get all messages
 router.route("/").get(async (req, res) => {
+  console.log("=> Messages request");
   const messages = await messageServices.getAllMessages();
   return res.json(messages);
 });

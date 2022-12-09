@@ -5,6 +5,7 @@ const router = express.Router();
 
 // Get
 router.route("/").get(async (req, res) => {
+  console.log("=> Settings request");
   const settings = await settingsServices.getSettings();
   return res.json(settings);
 });

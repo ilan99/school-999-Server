@@ -6,13 +6,13 @@ const router = express.Router();
 
 // Initial request
 router.route("/start").get(async (req, res) => {
-  console.log("Initial request ...");
+  console.log("Initial request : ", req.headers);
   res.send("ok");
 });
 
 // Get all students
 router.route("/").get(async (req, res) => {
-  console.log("New request: ", req.headers);
+  console.log("=> Students request");
   const students = await studentServices.getAllStudents();
   return res.json(students);
 });

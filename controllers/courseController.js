@@ -5,6 +5,7 @@ const router = express.Router();
 
 // Get all courses
 router.route("/").get(async (req, res) => {
+  console.log("=> Courses request");
   const courses = await courseServices.getAllCourses();
   return res.json(courses);
 });
