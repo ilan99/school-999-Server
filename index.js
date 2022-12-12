@@ -16,7 +16,6 @@ connectDB();
 app.use(cors());
 
 app.use(express.json());
-app.use(express.urlencoded({ extend: true }));
 
 app.use("/lecturers", lecturerController);
 app.use("/students", studentController);
